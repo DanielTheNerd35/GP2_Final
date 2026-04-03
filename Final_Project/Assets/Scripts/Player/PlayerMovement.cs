@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SideScrollMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     public float mSpeed = 5;
     public float jumpForce = 2.5f;
     public Transform groundCheck;
     public LayerMask groundLayer;
     public TrailRenderer tr;
-    //public GoldCount gc;
     public Animator anim;
+    public SpearBehavior spear;
+    public Transform spearPosition;
+    public bool hasthrown;
 
     private Rigidbody2D rb;
     private KeyCode restartKey;
     private float horizontal;
     private bool isFacingRight = true;
 
+    [Header("Dashing")]
     private bool canDash = true;
     private bool isDashing;
     private float dashingPower = 24f;
@@ -30,16 +33,6 @@ public class SideScrollMovement : MonoBehaviour
         restartKey = KeyCode.R;
         rb = GetComponent<Rigidbody2D>();
     }
-
-    /*private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Gold"))
-        {
-            gc.goldCount ++;
-            Destroy(other.gameObject);
-            Debug.Log("Gold Collected!");
-        }
-    }*/
 
     //Fixed Update is called once per frame every game second
     void FixedUpdate()
@@ -59,18 +52,6 @@ public class SideScrollMovement : MonoBehaviour
         {
             anim.SetBool("IsMoving", false);
         }
-
-        /*if (Input.GetKey(KeyCode.A))
-        {
-            Debug.Log("going Left!");
-            rb.AddForce(Vector2.left * mSpeed, ForceMode2D.Impulse);
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            Debug.Log("Going Right!");
-            rb.AddForce(Vector2.right * mSpeed, ForceMode2D.Impulse);
-        }*/
     }
 
     private bool isGrounded()
@@ -111,6 +92,18 @@ public class SideScrollMovement : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Makes it so then it will load the current scene it is on. 
         }
+
+        if (Input.GetKeyDown("space"))
+        {
+             if (!hasthrown)
+            {
+                ThrowSpear();
+            }
+            else
+            {
+                spear.TeleportPlayer();
+            }
+        }
     }
 
     private void Flip()
@@ -130,6 +123,17 @@ public class SideScrollMovement : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
         rb.AddForce(knockbackForce, ForceMode2D.Impulse);
+    }
+
+    void ThrowSpear()
+    {
+        hasthrown = true;
+
+        spear.transform.SetParent(null, true);
+
+        float direction = isFacingRight ? 1f : -1f;
+
+        spear.rb.linearVelocity = new Vector2(direction * spear.speed, 0f);
     }
 
     private IEnumerator Dash()
