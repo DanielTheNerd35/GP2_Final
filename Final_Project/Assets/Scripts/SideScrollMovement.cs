@@ -1,0 +1,150 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class SideScrollMovement : MonoBehaviour
+{
+    public float mSpeed = 5;
+    public float jumpForce = 2.5f;
+    public Transform groundCheck;
+    public LayerMask groundLayer;
+    public TrailRenderer tr;
+    //public GoldCount gc;
+    public Animator anim;
+
+    private Rigidbody2D rb;
+    private KeyCode restartKey;
+    private float horizontal;
+    private bool isFacingRight = true;
+
+    private bool canDash = true;
+    private bool isDashing;
+    private float dashingPower = 24f;
+    private float dashingTime = 0.2f;
+    private float dashingCooldown = 1f;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        restartKey = KeyCode.R;
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    /*private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Gold"))
+        {
+            gc.goldCount ++;
+            Destroy(other.gameObject);
+            Debug.Log("Gold Collected!");
+        }
+    }*/
+
+    //Fixed Update is called once per frame every game second
+    void FixedUpdate()
+    {
+        if (isDashing)
+        {
+            return;
+        }
+
+        rb.linearVelocity = new Vector2(horizontal * mSpeed, rb.linearVelocity.y);
+
+        if (horizontal > 0 || horizontal < 0)
+        {
+            anim.SetBool("IsMoving", true);
+        }
+        else if(horizontal == 0)
+        {
+            anim.SetBool("IsMoving", false);
+        }
+
+        /*if (Input.GetKey(KeyCode.A))
+        {
+            Debug.Log("going Left!");
+            rb.AddForce(Vector2.left * mSpeed, ForceMode2D.Impulse);
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            Debug.Log("Going Right!");
+            rb.AddForce(Vector2.right * mSpeed, ForceMode2D.Impulse);
+        }*/
+    }
+
+    private bool isGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
+
+    // Update is called once per frame every second
+    void Update()
+    {
+        horizontal = Input.GetAxisRaw("Horizontal");
+
+        if (Input.GetButtonDown("Jump") && isGrounded())
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            anim.SetBool("IsJumping", true);
+        }
+
+        if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0f)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
+            anim.SetBool("IsJumping", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        {
+            StartCoroutine(Dash());
+        }
+
+        Flip();
+
+        if (isDashing)
+        {
+            return;
+        }
+
+         if (Input.GetKeyDown(restartKey)) // Restart button
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Makes it so then it will load the current scene it is on. 
+        }
+    }
+
+    private void Flip()
+    {
+        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
+        {
+            isFacingRight = !isFacingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
+        }
+    }
+
+    public void knockbackPlayer(Vector2 knockbackForce, int direction)
+    {
+        knockbackForce.x *= direction;
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+        rb.AddForce(knockbackForce, ForceMode2D.Impulse);
+    }
+
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.linearVelocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        tr.emitting = false;
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
+    }
+}
