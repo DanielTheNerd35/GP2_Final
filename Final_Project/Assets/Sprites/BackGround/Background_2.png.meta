@@ -20,6 +20,9 @@ TextureImporter:
   - first:
       213: 6297506489578819348
     second: Background_2_5
+  - first:
+      213: -5336239787260416008
+    second: Background_2_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -66,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1024
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -131,9 +134,9 @@ TextureImporter:
       name: Background_2_0
       rect:
         serializedVersion: 2
-        x: 46
-        y: 952
-        width: 107
+        x: 100
+        y: 940
+        width: 194
         height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -153,9 +156,9 @@ TextureImporter:
       name: Background_2_1
       rect:
         serializedVersion: 2
-        x: 376
-        y: 961
-        width: 107
+        x: 703
+        y: 949
+        width: 194
         height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -175,9 +178,9 @@ TextureImporter:
       name: Background_2_2
       rect:
         serializedVersion: 2
-        x: 682
-        y: 958
-        width: 107
+        x: 1263
+        y: 946
+        width: 194
         height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -197,9 +200,9 @@ TextureImporter:
       name: Background_2_3
       rect:
         serializedVersion: 2
-        x: 217
-        y: 892
-        width: 107
+        x: 1803
+        y: 948
+        width: 194
         height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -219,9 +222,9 @@ TextureImporter:
       name: Background_2_4
       rect:
         serializedVersion: 2
-        x: 514
-        y: 889
-        width: 107
+        x: 413
+        y: 880
+        width: 194
         height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -241,9 +244,9 @@ TextureImporter:
       name: Background_2_5
       rect:
         serializedVersion: 2
-        x: 833
+        x: 956
         y: 877
-        width: 107
+        width: 194
         height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -255,6 +258,28 @@ TextureImporter:
       bones: []
       spriteID: 41f001269cc356750800000000000000
       internalID: 6297506489578819348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_2_6
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 865
+        width: 194
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ff6904af2ed1f5b0800000000000000
+      internalID: -5336239787260416008
       vertices: []
       indices: 
       edges: []
@@ -279,6 +304,7 @@ TextureImporter:
       Background_2_3: -5006331942474043291
       Background_2_4: 2697279714187833188
       Background_2_5: 6297506489578819348
+      Background_2_6: -5336239787260416008
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
