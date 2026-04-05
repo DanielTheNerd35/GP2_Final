@@ -38,6 +38,6 @@ public class EnemyLogic : MonoBehaviour
 
     public void Die()
     {
-        Destroy(transform.parent.gameObject);
+        Destroy(gameObject);
     }
 }
