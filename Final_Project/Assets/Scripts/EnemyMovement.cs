@@ -3,18 +3,26 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+
+    [Header("References")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private SpriteRenderer sr;
-    [SerializeField] private float mSpeed = 3f;
-    [SerializeField] private int startDirection = 1;
-    [SerializeField] private bool stayOnLedges = true;
+    public Transform detectionPoint;
+    public LayerMask playerLayer;
+    private Transform player;
 
+    [Header("Movement")]
+    public float mSpeed = 3f;
+    private int startDirection = 1;
+    [SerializeField] private bool stayOnLedges = true;
     private int currentDirection;
     private float halfWidth;
     private float halfHeight;
     private Vector2 movement;
     private bool isGrounded;
     private float movementDelay;
+
+    public float playerDetectedRange = 5;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,6 +31,14 @@ public class EnemyMovement : MonoBehaviour
         halfHeight = sr.bounds.extents.y;
         currentDirection = startDirection;
         sr.flipX = startDirection == 1 ? false : true;
+    }
+
+    void Update()
+    {
+        if (detectionPoint != null)
+        {
+            CheckForPLayer();
+        }
     }
 
     void FixedUpdate()
@@ -37,6 +53,15 @@ public class EnemyMovement : MonoBehaviour
         movement.y = rb.linearVelocity.y;
         rb.linearVelocity = movement;
         SetDirection();
+    }
+
+    private void CheckForPLayer() 
+    {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(detectionPoint.position, playerDetectedRange, playerLayer);
+        if (hits.Length > 0)
+        {
+            player = hits[0].transform;
+        }
     }
 
     private void OnCollisionStay2D(Collision2D other)
