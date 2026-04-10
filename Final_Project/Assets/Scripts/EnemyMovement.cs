@@ -5,11 +5,13 @@ public class EnemyMovement : MonoBehaviour
 {
 
     [Header("References")]
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private SpriteRenderer sr;
+    private Rigidbody2D rb;
+    private SpriteRenderer sr;
+    private Animator anim;
     public Transform detectionPoint;
     public LayerMask playerLayer;
     private Transform player;
+    private EnemyState enemyState;
 
     [Header("Movement")]
     public float mSpeed = 3f;
@@ -22,8 +24,19 @@ public class EnemyMovement : MonoBehaviour
     private bool isGrounded;
     private float movementDelay;
 
+    [Header("Attack Stats")]
+    public float damage = 5;
+    public float attackRange = 2;
+    public float attackCooldown = 2;
     public float playerDetectedRange = 5;
+    private float attackCooldownTimer;
 
+    void Awake()
+    {
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,6 +44,7 @@ public class EnemyMovement : MonoBehaviour
         halfHeight = sr.bounds.extents.y;
         currentDirection = startDirection;
         sr.flipX = startDirection == 1 ? false : true;
+        ChangeState(EnemyState.Idle);
     }
 
     void Update()
@@ -39,6 +53,18 @@ public class EnemyMovement : MonoBehaviour
         {
             CheckForPLayer();
         }
+
+        switch (enemyState)
+        {
+            case EnemyState.Chasing:
+                ChasePlayer();
+                break;
+    
+            case EnemyState.Attacking:
+                rb.linearVelocity = Vector2.zero;
+                break;
+        }
+
     }
 
     void FixedUpdate()
@@ -61,7 +87,25 @@ public class EnemyMovement : MonoBehaviour
         if (hits.Length > 0)
         {
             player = hits[0].transform;
+
+            //if the player is in attack range AND cooldown is ready
+            if (Vector2.Distance(transform.position, player.position) <= attackRange && attackCooldownTimer <= 0)
+            {
+                attackCooldownTimer = attackCooldown;
+                ChangeState(EnemyState.Attacking);
+            }
+
+            else if (Vector2.Distance(transform.position, player.position) > attackRange && enemyState != EnemyState.Attacking)
+            {
+                ChangeState(EnemyState.Chasing);
+            }
         }
+    }
+
+    void ChasePlayer()
+    {
+        Vector2 direction = (player.position - transform.position).normalized;
+        rb.linearVelocity = direction * mSpeed;
     }
 
     private void OnCollisionStay2D(Collision2D other)
@@ -76,10 +120,10 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        isGrounded = false;
-    }
+    // private void OnCollisionExit2D(Collision2D other)
+    // {
+    //     isGrounded = false;
+    // }
 
     public void knockbackEnemy(Vector2 knockbackForce, int direction, float delay)
     {
@@ -136,4 +180,41 @@ public class EnemyMovement : MonoBehaviour
         Debug.DrawRay(transform.position, Vector2.right * (halfWidth + 0.1f), Color.red);
         Debug.DrawRay(transform.position, Vector2.left * (halfWidth + 0.1f), Color.red);
     }
+
+    void ChangeState(EnemyState newState)
+   {
+    //Exit the current animation
+        if (enemyState == EnemyState.Idle)
+        {
+            anim.SetBool("isIdle", false);
+        }
+        else if (enemyState == EnemyState.Chasing){
+            anim.SetBool("Moving", false);
+        }
+        else if (enemyState == EnemyState.Attacking){
+            anim.SetBool("Attacking", false);
+        }
+
+        //Update our current state
+        enemyState = newState;
+
+        //Update the new animation
+        if (enemyState == EnemyState.Idle)
+        {
+            anim.SetBool("isIdle", true);
+        }
+        else if (enemyState == EnemyState.Chasing){
+            anim.SetBool("Moving", true);
+        }
+        else if (enemyState == EnemyState.Attacking){
+            anim.SetBool("Attacking", true);
+        }
+   }
+}
+
+public enum EnemyState
+{
+    Idle,
+    Chasing,
+    Attacking,
 }

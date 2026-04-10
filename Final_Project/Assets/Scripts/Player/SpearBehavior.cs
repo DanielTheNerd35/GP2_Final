@@ -8,6 +8,7 @@ public class SpearBehavior : MonoBehaviour
     public Transform playerPos;
     public Rigidbody2D rb;
     public Camera cam;
+    private Vector3 mousePos;
     public float speed;
     public int damage;
     private float travelTime = 3f;
@@ -42,6 +43,19 @@ public class SpearBehavior : MonoBehaviour
         
         beyondScreen();
 
+        if (!hasLaunched)
+        {
+            mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+            mousePos.z = 0f;
+
+            Vector3 direction = (mousePos - playerPos.position).normalized;
+
+            float radius = 1.5f;
+            transform.position = playerPos.position + direction * radius;
+
+            float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, rotZ);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)

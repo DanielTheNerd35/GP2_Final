@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
     public TrailRenderer tr;
-    public Animator anim;
+    //public Animator anim;
     public SpearBehavior spear;
     public Transform spearPosition;
     public bool hasthrown;
@@ -46,11 +46,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (horizontal > 0 || horizontal < 0)
         {
-            anim.SetBool("IsMoving", true);
+            //anim.SetBool("IsMoving", true);
         }
         else if(horizontal == 0)
         {
-            anim.SetBool("IsMoving", false);
+            //anim.SetBool("IsMoving", false);
         }
     }
 
@@ -67,13 +67,13 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-            anim.SetBool("IsJumping", true);
+            //anim.SetBool("IsJumping", true);
         }
 
         if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0f)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
-            anim.SetBool("IsJumping", false);
+            //anim.SetBool("IsJumping", false);
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Makes it so then it will load the current scene it is on. 
         }
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetMouseButtonDown(0))
         {
              if (!hasthrown)
             {
