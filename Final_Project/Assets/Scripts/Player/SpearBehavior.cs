@@ -43,19 +43,19 @@ public class SpearBehavior : MonoBehaviour
         
         beyondScreen();
 
-        if (!hasLaunched)
-        {
-            mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0f;
+        // if (!hasLaunched)
+        // {
+        //     mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        //     mousePos.z = 0f;
 
-            Vector3 direction = (mousePos - playerPos.position).normalized;
+        //     Vector3 direction = (mousePos - playerPos.position).normalized;
 
-            float radius = 1.5f;
-            transform.position = playerPos.position + direction * radius;
+        //     float radius = 1.5f;
+        //     transform.position = playerPos.position + direction * radius;
 
-            float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, rotZ);
-        }
+        //     float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        //     transform.rotation = Quaternion.Euler(0, 0, rotZ);
+        // }
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
