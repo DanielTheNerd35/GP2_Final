@@ -58,15 +58,15 @@ public class SpearBehavior : MonoBehaviour
         // }
     }
 
-    private void OnTriggerEnter2D(Collider2D hitInfo)
-    {
-        EnemyLogic enemy = hitInfo.GetComponent<EnemyLogic>();
-        if (enemy != null)
-        {
-            enemy.TakeDamage(damage);
-        }
-        ReturnPlayer();
-    }
+    // private void OnTriggerEnter2D(Collider2D hitInfo)
+    // {
+    //     EnemyLogic enemy = hitInfo.GetComponent<EnemyLogic>();
+    //     if (enemy != null)
+    //     {
+    //         enemy.TakeDamage(damage);
+    //     }
+    //     ReturnPlayer();
+    // }
 
     private void beyondScreen()
     {

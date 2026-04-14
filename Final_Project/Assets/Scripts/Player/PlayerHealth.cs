@@ -1,32 +1,29 @@
 using UnityEngine;
-using System;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private Animator anim;
-    public int health;
-    public int currentHealth {get; private set;}
-    public int maxHealth {get; private set;}
-    public static Action<int> OnPlayerTakeDamage;
-    public GameObject player;
-    private const string flashRedAnim = "FlashRed";
+    public int maxHealth;
+    public int currentHealth;
+
+    public HealthBar healthbar;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
+    void Start()
     {
-        currentHealth = health;
-        maxHealth = health;
+        currentHealth = maxHealth;
+        healthbar.SetMaxHealth(maxHealth);
     }
 
-    public void TakeDamage(int damage)
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log("Took Damage!");
-        OnPlayerTakeDamage?.Invoke(currentHealth);
-        anim.SetTrigger(flashRedAnim);
-        if (currentHealth <= 0)
-        {
-            Destroy(gameObject);
-        }
+
+        healthbar.SetHealth(currentHealth);
     }
 }
