@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8008780201449321287}
   - component: {fileID: 8438290030608364364}
-  - component: {fileID: 7332605972593951343}
   - component: {fileID: 57683535121435427}
   - component: {fileID: 7840008306888582216}
   - component: {fileID: 4569196002691210003}
-  m_Layer: 0
+  - component: {fileID: 7332605972593951343}
+  - component: {fileID: 4974514322868538719}
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,39 +83,17 @@ SpriteRenderer:
   m_SortingLayerID: -563413143
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 7928858964255100155, guid: f9d6380ae79269942a7d2d0725428b31, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.375, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7332605972593951343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2598537217945863665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 946a507193302f841af27a32c9fa2b35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectionPoint: {fileID: 5015077785788066511}
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  mSpeed: 3
-  stayOnLedges: 1
-  damage: 5
-  attackRange: 2
-  attackCooldown: 2
-  playerDetectedRange: 5
 --- !u!61 &57683535121435427
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -149,17 +128,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.25, y: -0.24585915}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 1.4375, y: 2}
+    newSize: {x: 1.375, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.5008569}
   m_EdgeRadius: 0
 --- !u!50 &7840008306888582216
 Rigidbody2D:
@@ -198,7 +177,7 @@ Animator:
   m_GameObject: {fileID: 2598537217945863665}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce3d5f90904e6724fa4c1e647727fb9c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -210,6 +189,43 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7332605972593951343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2598537217945863665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946a507193302f841af27a32c9fa2b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionPoint: {fileID: 5015077785788066511}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  mSpeed: 3
+  stayOnLedges: 1
+  damage: 5
+  attackRange: 2
+  attackCooldown: 2
+  playerDetectedRange: 5
+--- !u!114 &4974514322868538719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2598537217945863665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30aedf2c975f11644ba64a54c41b68fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  currentHealth: 0
+  healthbar: {fileID: 4002788249416909229}
 --- !u!1 &3128942622984794086
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +237,7 @@ GameObject:
   - component: {fileID: 476970072064813513}
   - component: {fileID: 3110052841019835208}
   - component: {fileID: 4002788249416909229}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +263,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -948.00867, y: -540.8224}
+  m_AnchoredPosition: {x: -947.75616, y: -540.6545}
   m_SizeDelta: {x: 1.112, y: 0.2616}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3110052841019835208
@@ -325,7 +341,7 @@ GameObject:
   - component: {fileID: 1262195492356395284}
   - component: {fileID: 5857767553668820247}
   - component: {fileID: 6145633881159765752}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +416,7 @@ GameObject:
   - component: {fileID: 2614894087626192878}
   - component: {fileID: 7080048486671280136}
   - component: {fileID: 3167608594826857644}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +492,7 @@ GameObject:
   - component: {fileID: 6568235845080326749}
   - component: {fileID: 6074575613696356973}
   - component: {fileID: 7793196282550303657}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,7 +591,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5015077785788066511}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DetectionRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,7 +624,7 @@ GameObject:
   - component: {fileID: 547300019508135936}
   - component: {fileID: 1740020776181726237}
   - component: {fileID: 1077205797147890145}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}

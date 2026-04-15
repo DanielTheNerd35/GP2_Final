@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public SpearBehavior spear;
     public Transform spearPosition;
     public bool hasthrown;
+    public PlayerCombat playerCombat;
 
     private Rigidbody2D rb;
     private KeyCode restartKey;
@@ -100,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Makes it so then it will load the current scene it is on. 
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
              if (!hasthrown)
             {
@@ -110,6 +111,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 spear.TeleportPlayer();
             }
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            playerCombat.Attack();
         }
     }
 
