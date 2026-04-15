@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7a672891a05df0e43ada331c575ae53a
+guid: b5977b1e9fb870f46bca01de4bc62579
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -317365376319608066
-    second: run-turn_0
+      213: -2522695359745954133
+    second: dash-attack_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: run-turn_0
+      name: dash-attack_0
       rect:
         serializedVersion: 2
-        x: 51
-        y: 54
-        width: 31
-        height: 38
+        x: 0
+        y: 58
+        width: 139
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: efa26782fdd789bf0800000000000000
-      internalID: -317365376319608066
+      spriteID: baee0d5afe59dfcd0800000000000000
+      internalID: -2522695359745954133
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      run-turn_0: -317365376319608066
+      dash-attack_0: -2522695359745954133
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

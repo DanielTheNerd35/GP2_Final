@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 7a672891a05df0e43ada331c575ae53a
+guid: 68cff9a233871764788c130fe2d8e598
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -317365376319608066
-    second: run-turn_0
+      213: -2525767418007990262
+    second: after-dash-attack-on-air_0
+  - first:
+      213: -7397585609380461946
+    second: after-dash-attack-on-air_1
+  - first:
+      213: 4381991020715030266
+    second: after-dash-attack-on-air_2
+  - first:
+      213: 7678591213693884488
+    second: after-dash-attack-on-air_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: run-turn_0
+      name: after-dash-attack-on-air_0
       rect:
         serializedVersion: 2
-        x: 51
-        y: 54
-        width: 31
-        height: 38
+        x: 53
+        y: 63
+        width: 78
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: efa26782fdd789bf0800000000000000
-      internalID: -317365376319608066
+      spriteID: a00d0685aeba2fcd0800000000000000
+      internalID: -2525767418007990262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: after-dash-attack-on-air_1
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 59
+        width: 62
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6820655151f765990800000000000000
+      internalID: -7397585609380461946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: after-dash-attack-on-air_2
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 55
+        width: 59
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af6bba6dd95ffcc30800000000000000
+      internalID: 4381991020715030266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: after-dash-attack-on-air_3
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 54
+        width: 56
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 848d8a3a606df8a60800000000000000
+      internalID: 7678591213693884488
       vertices: []
       indices: 
       edges: []
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      run-turn_0: -317365376319608066
+      after-dash-attack-on-air_0: -2525767418007990262
+      after-dash-attack-on-air_1: -7397585609380461946
+      after-dash-attack-on-air_2: 4381991020715030266
+      after-dash-attack-on-air_3: 7678591213693884488
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 7a672891a05df0e43ada331c575ae53a
+guid: 30082025e7a9cca48b4c3624f7a02670
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -317365376319608066
-    second: run-turn_0
+      213: 7117718426376103206
+    second: before-normal-dash_0
+  - first:
+      213: -7542061491269096393
+    second: before-normal-dash_1
+  - first:
+      213: 8272703822128423277
+    second: before-normal-dash_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: run-turn_0
+      name: before-normal-dash_0
       rect:
         serializedVersion: 2
-        x: 51
+        x: 35
         y: 54
-        width: 31
-        height: 38
+        width: 54
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: efa26782fdd789bf0800000000000000
-      internalID: -317365376319608066
+      spriteID: 625666f823737c260800000000000000
+      internalID: 7117718426376103206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: before-normal-dash_1
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 54
+        width: 54
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73ca0c28807355790800000000000000
+      internalID: -7542061491269096393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: before-normal-dash_2
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 54
+        width: 55
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d612bf9ab4c8ec270800000000000000
+      internalID: 8272703822128423277
       vertices: []
       indices: 
       edges: []
@@ -148,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      run-turn_0: -317365376319608066
+      before-normal-dash_0: 7117718426376103206
+      before-normal-dash_1: -7542061491269096393
+      before-normal-dash_2: 8272703822128423277
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
