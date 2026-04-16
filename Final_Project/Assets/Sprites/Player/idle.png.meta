@@ -131,10 +131,10 @@ TextureImporter:
       name: idle_0
       rect:
         serializedVersion: 2
-        x: 35
-        y: 54
-        width: 54
-        height: 43
+        x: 36
+        y: 55
+        width: 52
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,9 +153,9 @@ TextureImporter:
       name: idle_1
       rect:
         serializedVersion: 2
-        x: 313
-        y: 54
-        width: 54
+        x: 316
+        y: 55
+        width: 52
         height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -175,9 +175,9 @@ TextureImporter:
       name: idle_2
       rect:
         serializedVersion: 2
-        x: 590
-        y: 54
-        width: 54
+        x: 591
+        y: 55
+        width: 52
         height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -197,10 +197,10 @@ TextureImporter:
       name: idle_3
       rect:
         serializedVersion: 2
-        x: 867
-        y: 54
-        width: 54
-        height: 43
+        x: 868
+        y: 55
+        width: 52
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,10 +219,10 @@ TextureImporter:
       name: idle_4
       rect:
         serializedVersion: 2
-        x: 1144
-        y: 54
-        width: 54
-        height: 44
+        x: 1145
+        y: 55
+        width: 52
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,10 +241,10 @@ TextureImporter:
       name: idle_5
       rect:
         serializedVersion: 2
-        x: 1421
-        y: 54
-        width: 54
-        height: 44
+        x: 1422
+        y: 55
+        width: 52
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b8a1df56dca93b6439f2b3e1df6f328a
     internalID: 0
     vertices: []
     indices: 

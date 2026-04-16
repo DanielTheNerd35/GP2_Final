@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a58fd6d9c98c84d8db7e5d0ade7c83, type: 3}
   m_Name: Skeleton
   m_EditorClassIdentifier: 
-  patrolSpeed: 5
+  patrolSpeed: 4
   groundCheckDistance: 0.7
+  wallCheckDistance: 0.5
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 256
