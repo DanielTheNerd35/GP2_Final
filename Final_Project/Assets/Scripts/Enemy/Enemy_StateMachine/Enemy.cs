@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public Animator Anim {get; private set;}
     public EnemyConfig Config;
     public EnemySenses Senses {get; private set;}
+    public EnemyCombat Combat {get; private set;}
     public StateMachine StateMachine {get; private set;}
 
     private void Awake()
@@ -18,6 +19,7 @@ public class Enemy : MonoBehaviour
         Anim = GetComponent<Animator>();
         StateMachine = new StateMachine();
         Senses = GetComponent<EnemySenses>();
+        Combat = GetComponent<EnemyCombat>();
     }
 
     public void Start()
@@ -27,6 +29,7 @@ public class Enemy : MonoBehaviour
 
     private void Update() => StateMachine.CurrentState?.Update();
     private void FixedUpdate() => StateMachine.CurrentState?.FixedUpdate();
+    public void OnAnimationFinished() => StateMachine.CurrentState?.OnAnimationFinished();
 
     public void FaceTarget(Transform target)
     {

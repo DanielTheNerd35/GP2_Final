@@ -9,6 +9,7 @@ public class EnemySenses : MonoBehaviour
     [SerializeField] private Transform wallCheck;
     [SerializeField] private Transform attackPoint;
 
+    // Casts a Raycast so the enemy can detect if there is a cliff or a wall
     public bool IsAtCliff() => !Physics2D.Raycast(groundCheck.position, Vector2.down, config.groundCheckDistance, config.groundLayer);
     public bool IsHittingWall() => Physics2D.Raycast(wallCheck.position, Vector2.right, config.wallCheckDistance, config.wallLayer);
     
@@ -19,6 +20,15 @@ public class EnemySenses : MonoBehaviour
             return null;
 
         return hit.transform;
+    }
+
+    public bool IsInMeleeRange(Transform target)
+    {
+        if(!target)
+            return false;
+        
+        float distance = Vector2.Distance(target.position, attackPoint.position);
+        return distance <= config.meleeRange;
     }
 
     private void OnDrawGizmosSelected()
@@ -34,5 +44,9 @@ public class EnemySenses : MonoBehaviour
         //Chase Check Gizmos
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(attackPoint.position, config.chaseRange);
+
+        //Melee Check
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(attackPoint.position, config.meleeRange);
     }
 }

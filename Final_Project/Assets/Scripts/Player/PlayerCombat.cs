@@ -35,7 +35,7 @@ public class PlayerCombat : MonoBehaviour
 
             if(enemies.Length > 0)
             {
-                enemies[0].GetComponent<EnemyHealth>().TakeDamage(damage);
+                enemies[0].GetComponent<Health>().ChangeHealth(damage);
             }
     }
 

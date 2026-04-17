@@ -27,3 +27,6 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
+  meleeRange: 1.2
+  meleeDamage: 2
+  meleeCooldown: 1

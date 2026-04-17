@@ -1,7 +1,10 @@
 using UnityEngine;
+using System;
 
-public class EnemyHealth : MonoBehaviour
+public class Health : MonoBehaviour
 {
+    public event Action OnDamaged;
+    public event Action OnDeath;
     public int maxHealth;
     public int currentHealth;
 
@@ -20,10 +23,19 @@ public class EnemyHealth : MonoBehaviour
         
     }
 
-    public void TakeDamage(int damage)
+    public void ChangeHealth(int amount)
     {
-        currentHealth -= damage;
+        currentHealth += amount;
 
         healthbar.SetHealth(currentHealth);
+
+        if (currentHealth <=0)
+        {
+            OnDeath?.Invoke();
+        }
+        else if (amount <0)
+        {
+            OnDamaged?.Invoke();
+        }
     }
 }
