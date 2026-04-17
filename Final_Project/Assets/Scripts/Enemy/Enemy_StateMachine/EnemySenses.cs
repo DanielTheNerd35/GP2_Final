@@ -7,9 +7,19 @@ public class EnemySenses : MonoBehaviour
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform wallCheck;
+    [SerializeField] private Transform attackPoint;
 
     public bool IsAtCliff() => !Physics2D.Raycast(groundCheck.position, Vector2.down, config.groundCheckDistance, config.groundLayer);
     public bool IsHittingWall() => Physics2D.Raycast(wallCheck.position, Vector2.right, config.wallCheckDistance, config.wallLayer);
+    
+    public Transform GetChaseTarget()
+    {
+        Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, config.chaseRange, config.targetLayer);
+        if(!hit)
+            return null;
+
+        return hit.transform;
+    }
 
     private void OnDrawGizmosSelected()
     {
@@ -21,5 +31,8 @@ public class EnemySenses : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawLine(wallCheck.position, wallCheck.position + Vector3.right * enemy.FacingDirection * config.wallCheckDistance);
 
+        //Chase Check Gizmos
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(attackPoint.position, config.chaseRange);
     }
 }
