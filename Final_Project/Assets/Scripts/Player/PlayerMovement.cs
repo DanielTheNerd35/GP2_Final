@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    public PlayerState currentState;
+    public PlayerIdleState idleState;
+    public PlayerJumpState jumpState;
+
+
     public float mSpeed = 5;
     public float jumpForce = 2.5f;
     public Transform groundCheck;
@@ -28,12 +34,19 @@ public class PlayerMovement : MonoBehaviour
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
 
+    private void Awake()
+    {
+        idleState = new PlayerIdleState(this);
+        jumpState = new PlayerJumpState(this);
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         restartKey = KeyCode.R;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        ChangeState(idleState);
     }
 
     //Fixed Update is called once per frame every game second
@@ -54,6 +67,15 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("IsMoving", false);
         }
+    }
+
+    public void ChangeState(PlayerState newState)
+    {
+        if(currentState != null)
+            currentState.Exit();
+
+        currentState = newState;
+        currentState.Enter();
     }
 
     private bool isGrounded()

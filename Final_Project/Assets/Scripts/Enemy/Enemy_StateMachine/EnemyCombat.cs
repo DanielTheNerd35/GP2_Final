@@ -25,6 +25,6 @@ public class EnemyCombat : MonoBehaviour
 
         Health health = hit.GetComponent<Health>();
         if(health != null)
-            health.ChangeHealth(-config.meleeDamage);
+            health.ChangeHealth(-config.meleeDamage, transform.position);
     }
 }
