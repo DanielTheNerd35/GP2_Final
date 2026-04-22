@@ -28,6 +28,6 @@ public class EnemyDamaged : MonoBehaviour
 
     void HandleDeath()
     {
-
+        enemy.StateMachine.ChangeState(new DeadState(enemy));
     }
 }

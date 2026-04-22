@@ -1267,6 +1267,7 @@ GameObject:
   - component: {fileID: 817196561}
   - component: {fileID: 817196552}
   - component: {fileID: 817196560}
+  - component: {fileID: 817196562}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1414,6 +1415,8 @@ MonoBehaviour:
   spearPosition: {fileID: 191185125}
   hasthrown: 0
   playerCombat: {fileID: 817196560}
+  damage: {fileID: 817196562}
+  rb: {fileID: 0}
 --- !u!95 &817196554
 Animator:
   serializedVersion: 7
@@ -1608,6 +1611,22 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 10
   healthbar: {fileID: 1398084216}
+--- !u!114 &817196562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817196550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c8a9d015d2c2a741a2c2c2b27910eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 817196552}
+  health: {fileID: 817196561}
+  knockbackForce: 20
+  knockbackDuration: 0.2
 --- !u!1 &976259375
 GameObject:
   m_ObjectHideFlags: 0
