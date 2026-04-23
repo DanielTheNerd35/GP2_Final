@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player_throwSpear
+  m_Name: Player_ThrowSpear
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -24,18 +24,20 @@ AnimationClip:
       value: {fileID: -5745836943426895379, guid: 65e920c97e05ab141a84ce146c44fed5, type: 3}
     - time: 0.125
       value: {fileID: -2067911087616676622, guid: b18684a9b9805314d827d6a4c8142512, type: 3}
-    - time: 0.29166666
+    - time: 0.25
       value: {fileID: 4250663444610813780, guid: 053f4118e0828294aae149fa23a4b79f, type: 3}
-    - time: 0.41666666
+    - time: 0.375
       value: {fileID: 3300952866708498675, guid: 803603385de6d2f4e912d4330c7534ed, type: 3}
-    - time: 0.5416667
+    - time: 0.5
       value: {fileID: 6278159671978490149, guid: ee93947f2d372c2498d2f608bf8cae0d, type: 3}
-    - time: 0.7083333
+    - time: 0.625
       value: {fileID: -192912740993787737, guid: 2a46e0be0e63e9142be3ceb2b33f8262, type: 3}
-    - time: 0.8333333
+    - time: 0.75
       value: {fileID: -6453204308362224245, guid: e69a23b9e701cfd49801ab96ab34cc8b, type: 3}
+    - time: 0.875
+      value: {fileID: 947203298751838386, guid: c1a44048c0890e24b84c3bbcdc8aed16, type: 3}
     attribute: m_Sprite
-    path: Spear
+    path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -47,7 +49,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 1583325607
+      path: 0
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -63,17 +65,18 @@ AnimationClip:
     - {fileID: 6278159671978490149, guid: ee93947f2d372c2498d2f608bf8cae0d, type: 3}
     - {fileID: -192912740993787737, guid: 2a46e0be0e63e9142be3ceb2b33f8262, type: 3}
     - {fileID: -6453204308362224245, guid: e69a23b9e701cfd49801ab96ab34cc8b, type: 3}
+    - {fileID: 947203298751838386, guid: c1a44048c0890e24b84c3bbcdc8aed16, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.875
+    m_StopTime: 0.9166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -87,4 +90,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.75
+    functionName: ThrowSpear
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

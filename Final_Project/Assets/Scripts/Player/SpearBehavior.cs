@@ -85,6 +85,8 @@ public class SpearBehavior : MonoBehaviour
         this.transform.SetParent(playerPos, false);
         transform.position = new Vector3(playerPos.position.x + 1, playerPos.position.y, -1);
         rb.linearVelocity = Vector2.zero;
+        player.spearSR.enabled = false;
+        player.anim.SetBool("SpearThrow", false);
     }
 
     public void TeleportPlayer()

@@ -30,19 +30,20 @@ public class PlayerDamage : MonoBehaviour
         player.anim.SetBool("IsDamaged", true);
         int knockbackDir = 0;
         knockbackDir = transform.position.x > sourcePosition.x ? 1 : -1;
-        knockbackVelocity = knockbackDir * knockbackForce;
-        player.rb.linearVelocity = new Vector2(knockbackVelocity, player.rb.linearVelocity.y);
+        player.anim.SetBool("IsDamaged", false);
+        // knockbackVelocity = knockbackDir * knockbackForce;
+        // player.rb.linearVelocity = new Vector2(knockbackVelocity, player.rb.linearVelocity.y);
     }
 
-    public void FixedUpdate()
-    {
-        knockbackDuration -= Time.fixedDeltaTime;
-        if(knockbackDuration <= 0)
-        {
-            player.rb.linearVelocity = Vector2.zero;
-            player.anim.SetBool("IsDamaged", false);
-        }
-    }
+    // public void FixedUpdate()
+    // {
+    //     knockbackDuration -= Time.fixedDeltaTime;
+    //     if(knockbackDuration <= 0)
+    //     {
+    //         player.rb.linearVelocity = Vector2.zero;
+    //         player.anim.SetBool("IsDamaged", false);
+    //     }
+    // }
     
     void HandleDeath()
     {

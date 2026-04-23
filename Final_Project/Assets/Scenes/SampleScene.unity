@@ -256,7 +256,7 @@ Transform:
   m_GameObject: {fileID: 191185124}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.252, y: -0.142, z: 0}
+  m_LocalPosition: {x: 6.36, y: 0.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -269,7 +269,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191185124}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -306,7 +306,7 @@ SpriteRenderer:
   m_SortingLayerID: -563413143
   m_SortingLayer: 6
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 34fb6b098181d5c41829665d841c18cb, type: 3}
+  m_Sprite: {fileID: 4702256459348552002, guid: c1a44048c0890e24b84c3bbcdc8aed16, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -360,7 +360,7 @@ MonoBehaviour:
   playerPos: {fileID: 817196558}
   rb: {fileID: 191185128}
   cam: {fileID: 519420031}
-  speed: 10
+  speed: 20
   damage: 10
 --- !u!1 &379770748
 GameObject:
@@ -1413,6 +1413,7 @@ MonoBehaviour:
   anim: {fileID: 817196554}
   spear: {fileID: 191185129}
   spearPosition: {fileID: 191185125}
+  spearSR: {fileID: 191185127}
   hasthrown: 0
   playerCombat: {fileID: 817196560}
   damage: {fileID: 817196562}
@@ -9476,15 +9477,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1262195492356395284, guid: 377b695a4d2889848926f697b9df9324, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.487
       objectReference: {fileID: 0}
     - target: {fileID: 1262195492356395284, guid: 377b695a4d2889848926f697b9df9324, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2598537217945863665, guid: 377b695a4d2889848926f697b9df9324, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2598537217945863665, guid: 377b695a4d2889848926f697b9df9324, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5015077785788066511, guid: 377b695a4d2889848926f697b9df9324, type: 3}
       propertyPath: m_LocalPosition.x

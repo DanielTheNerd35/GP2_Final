@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator anim;
     public SpearBehavior spear;
     public Transform spearPosition;
+    public SpriteRenderer spearSR;
     public bool hasthrown;
     public PlayerCombat playerCombat;
     public PlayerDamage damage;
@@ -72,14 +73,14 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-            //anim.SetBool("IsJumping", true);
+            anim.SetBool("IsJumping", true);
         }
 
         if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0f)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
-            //anim.SetBool("IsJumping", false);
-            //anim.SetBool("IsFalling", true);
+            anim.SetBool("IsJumping", false);
+            anim.SetBool("IsFalling", true);
         }
 
         if (isGrounded())
@@ -108,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
         {
              if (!hasthrown)
             {
-                ThrowSpear();
+                anim.SetBool("SpearThrow", true);
             }
             else
             {
@@ -144,6 +145,8 @@ public class PlayerMovement : MonoBehaviour
     void ThrowSpear()
     {
         hasthrown = true;
+
+        spearSR.enabled = true;
 
         spear.transform.SetParent(null, true);
 
