@@ -42,31 +42,22 @@ public class SpearBehavior : MonoBehaviour
         }
         
         beyondScreen();
-
-        // if (!hasLaunched)
-        // {
-        //     mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        //     mousePos.z = 0f;
-
-        //     Vector3 direction = (mousePos - playerPos.position).normalized;
-
-        //     float radius = 1.5f;
-        //     transform.position = playerPos.position + direction * radius;
-
-        //     float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        //     transform.rotation = Quaternion.Euler(0, 0, rotZ);
-        // }
     }
 
-    // private void OnTriggerEnter2D(Collider2D hitInfo)
-    // {
-    //     EnemyLogic enemy = hitInfo.GetComponent<EnemyLogic>();
-    //     if (enemy != null)
-    //     {
-    //         enemy.TakeDamage(damage);
-    //     }
-    //     ReturnPlayer();
-    // }
+    private void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        Health health = hitInfo.GetComponent<Health>();
+        if (health != null)
+        {
+            health.ChangeHealth(-damage, transform.position);
+        }
+        ReturnPlayer();
+        
+        if(hitInfo.CompareTag("Wall"))
+        {
+            ReturnPlayer();
+        }
+    }
 
     private void beyondScreen()
     {
@@ -82,11 +73,11 @@ public class SpearBehavior : MonoBehaviour
     {
         hasLaunched = false;
         player.hasthrown = false;
-        this.transform.SetParent(playerPos, false);
-        transform.position = new Vector3(playerPos.position.x + 1, playerPos.position.y, -1);
-        rb.linearVelocity = Vector2.zero;
-        player.spearSR.enabled = false;
         player.anim.SetBool("SpearThrow", false);
+        this.transform.SetParent(playerPos, false);
+        transform.position = new Vector3(playerPos.position.x + 5, playerPos.position.y + 0.3f, -1);
+        //player.spearSR.enabled = false;
+        rb.linearVelocity = Vector2.zero;
     }
 
     public void TeleportPlayer()
