@@ -1697,7 +1697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1df4ce2e0f828b439d7fcf85bed0324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 20
   currentHealth: 0
   healthbar: {fileID: 1654587633}
 --- !u!114 &1040955919
@@ -9645,11 +9645,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1262195492356395284, guid: 377b695a4d2889848926f697b9df9324, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.487
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1262195492356395284, guid: 377b695a4d2889848926f697b9df9324, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2598537217945863665, guid: 377b695a4d2889848926f697b9df9324, type: 3}
       propertyPath: m_Name
@@ -9657,7 +9657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2598537217945863665, guid: 377b695a4d2889848926f697b9df9324, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5015077785788066511, guid: 377b695a4d2889848926f697b9df9324, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9677,7 +9677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8008780201449321287, guid: 377b695a4d2889848926f697b9df9324, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.9499998
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8008780201449321287, guid: 377b695a4d2889848926f697b9df9324, type: 3}
       propertyPath: m_LocalPosition.y
