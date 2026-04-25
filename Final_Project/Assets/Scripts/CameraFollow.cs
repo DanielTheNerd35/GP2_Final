@@ -4,6 +4,11 @@ public class CameraFollow : MonoBehaviour
 {
     public Transform followObject; //this will be assigned by the inspector
 
+    public void Awake()
+    {
+        FindObjectOfType<AudioManager>().Play("BGMusic");
+    }
+
 
     void FixedUpdate()
     {

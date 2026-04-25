@@ -24,6 +24,7 @@ public class PlayerCombat : MonoBehaviour
         if(timer <= 0)
         {
             anim.SetBool("IsAttacking", true);
+            FindObjectOfType<AudioManager>().Play("AttackNoise");
 
             timer = cooldown;
         }

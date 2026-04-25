@@ -92,6 +92,7 @@ public class SpearBehavior : MonoBehaviour
     private IEnumerator SpearTravel()
     {
         hasLaunched = true;
+        FindObjectOfType<AudioManager>().Play("SpearThrow");
         yield return new WaitForSeconds(travelTime);
     }
 }
