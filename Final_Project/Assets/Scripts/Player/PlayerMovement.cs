@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator anim;
     public SpearBehavior spear;
     public Transform spearPosition;
-    public GameObject spearObject;
+    public SpriteRenderer spearSR;
     public bool hasthrown;
     public PlayerCombat playerCombat;
     public PlayerDamage damage;
@@ -146,7 +146,7 @@ public class PlayerMovement : MonoBehaviour
     {
         hasthrown = true;
 
-        spearObject.SetActive(true);
+        spearSR.enabled = true;
 
         spear.transform.SetParent(null, true);
 

@@ -76,7 +76,7 @@ public class SpearBehavior : MonoBehaviour
         player.anim.SetBool("SpearThrow", false);
         this.transform.SetParent(playerPos, false);
         transform.position = new Vector3(playerPos.position.x + 5, playerPos.position.y + 0.3f, -1);
-        //player.spearSR.enabled = false;
+        player.spearSR.enabled = false;
         rb.linearVelocity = Vector2.zero;
     }
 
