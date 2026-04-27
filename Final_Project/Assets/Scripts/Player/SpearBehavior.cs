@@ -63,7 +63,7 @@ public class SpearBehavior : MonoBehaviour
     {
         Vector3 viewPos = cam.WorldToViewportPoint(this.gameObject.transform.position);
 
-        if (viewPos.x >= 1.5F)
+        if (viewPos.x >= 2.5F)
         {
             ReturnPlayer();
         }
