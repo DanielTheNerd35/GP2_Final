@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: c1a44048c0890e24b84c3bbcdc8aed16
+guid: febd9801f4c58ba4d8871720534dd7dd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 947203298751838386
-    second: THrow8_0
-  - first:
-      213: 4702256459348552002
-    second: THrow8_1
+      213: 2189510010676529607
+    second: Portal_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,45 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: THrow8_0
+      name: Portal_0
       rect:
         serializedVersion: 2
-        x: 53
-        y: 54
-        width: 42
-        height: 28
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2b87e28b164252d00800000000000000
-      internalID: 947203298751838386
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: THrow8_1
-      rect:
-        serializedVersion: 2
-        x: 138
-        y: 74
-        width: 132
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 249a14e0655c14140800000000000000
-      internalID: 4702256459348552002
+      spriteID: 7c9498211c3b26e10800000000000000
+      internalID: 2189510010676529607
       vertices: []
       indices: 
       edges: []
@@ -163,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7ac0e0a012f6f4645be8f456215ea8ff
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      THrow8_0: 947203298751838386
-      THrow8_1: 4702256459348552002
+      Portal_0: 2189510010676529607
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
